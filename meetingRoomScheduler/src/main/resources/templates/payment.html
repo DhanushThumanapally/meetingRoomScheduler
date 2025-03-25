@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meeting Room Scheduler - Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Payment Page</h2>
+    <p>Room: <span th:text="${roomName}"></span></p>
+    <p>Time Slot: <span th:text="${startTime}"></span> to <span th:text="${endTime}"></span></p>
+    <form action="/makePayment" method="post">
+        <input type="hidden" name="roomName" th:value="${roomName}">
+        <input type="hidden" name="startTime" th:value="${startTime}">
+        <input type="hidden" name="endTime" th:value="${endTime}">
+        <button type="submit">Confirm Payment</button>
+    </form>
+    <br>
+    <a href="/">Cancel & Go Home</a>
+</body>
+</html>

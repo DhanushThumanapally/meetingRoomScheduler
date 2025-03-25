@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meeting Room Scheduler - Confirmation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+    <div th:if="${bookingSuccess}">
+        <p>Booking successful for room: <span th:text="${roomName}"></span></p>
+        <p>Time Slot: <span th:text="${startTime}"></span> to <span th:text="${endTime}"></span></p>
+    </div>
+    <div th:if="${!bookingSuccess}">
+        <p>Booking failed. The room may have been booked in the meantime.</p>
+    </div>
+    <button onclick="window.location.href='/'">Go Back to Home</button>
+</body>
+</html>

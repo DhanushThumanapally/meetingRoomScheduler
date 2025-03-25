@@ -1,0 +1,7 @@
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/App.java
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/meetingroomscheduler/MeetingRoomSchedulerApplication.java
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/meetingroomscheduler/controller/SchedulerController.java
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/meetingroomscheduler/model/Booking.java
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/meetingroomscheduler/model/MeetingRoom.java
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/meetingroomscheduler/repository/MeetingRoomRepository.java
+/workspace/meetingRoomScheduler/meetingRoomScheduler/src/main/java/com/example/meetingroomscheduler/service/SchedulerService.java

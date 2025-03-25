@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meeting Room Scheduler - Select Time Slot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: left;
+        }
+        input, button {
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Your Time Slot</h2>
+    <form action="/selectSlot" method="post">
+        <label for="startTime">Start Time (HH:mm):</label><br>
+        <input type="time" id="startTime" name="startTime" min="06:00" max="18:00" required><br>
+        
+        <label for="endTime">End Time (HH:mm):</label><br>
+        <input type="time" id="endTime" name="endTime" min="06:00" max="18:00" required><br>
+        
+        <button type="submit">Find Available Rooms</button>
+    </form>
+    <div th:if="${error}" class="error">
+        <p th:text="${error}"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meeting Room Scheduler - Available Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Available Rooms</h2>
+    <div th:if="${#lists.isEmpty(availableRooms)}">
+        <p>No rooms available for the selected time slot.</p>
+        <a href="/">Go Back</a>
+    </div>
+    <ul th:if="${!#lists.isEmpty(availableRooms)}">
+        <li th:each="room : ${availableRooms}">
+            <form action="/bookRoom" method="post" style="display: inline;">
+                <input type="hidden" name="roomName" th:value="${room.name}">
+                <input type="hidden" name="startTime" th:value="${startTime}">
+                <input type="hidden" name="endTime" th:value="${endTime}">
+                <span th:text="${room.name}"></span>
+                <button type="submit">Select & Book</button>
+            </form>
+        </li>
+    </ul>
+</body>
+</html>
+    
